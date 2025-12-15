@@ -15,12 +15,14 @@ import Footer from "../components/Footer.astro";
 		<!-- Slot para sobrescribir o añadir metadatos específicos -->
 		<slot name="head" />
 	</head>
-	<body class="d-flex h-100 text-center text-bg-dark">
-		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-			<Header />
-			<slot />
-			<Footer />
-		</div>
+	<body class="h-100 text-bg-dark">
+		
+		<Header />
+
+		<slot />
+		
+		<Footer />
+		
 
 		<!-- Importación del JS de Bootstrap -->
 		<script>

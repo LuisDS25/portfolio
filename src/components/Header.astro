@@ -1,23 +1,49 @@
-<header class="mb-auto">
-    <div>
-        <a class="float-md-start mb-0">
-            <img
-                src="/portfolio/icons/logo.png"
-                alt="LefDev Logo"
-                width="60"
-                height="60"
-                class="d-inline-block align-text-top"
-            />
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a
+        href="/portfolio"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+    >
+        <img
+            src="/portfolio/icons/logo.png"
+            alt="LefDev Logo"
+            width="45"
+            height="45"
+            class="bi me-2"
+            aria-hidden="true"
+        />
+        <span class="fs-4 text-white">LefDev</span>
+    </a>
+
+    <nav class="nav nav-pills">
+        <a
+            href="/portfolio"
+            class={`nav-link ${currentPath === "/portfolio/" ? "active" : ""}`}
+        >
+            Inicio
         </a>
-
-        <nav class="nav nav-pills justify-content-center float-md-end">
-            <a href="#" class="nav-link active" aria-current="page">Inicio</a>
-            
-            <a href="#" class="nav-link">Habilidades</a></li>
-            
-            <a href="#" class="nav-link">Proyectos</a></li>
-
-            <a href="#" class="nav-link">Sobre mí</a></li>
-        </ul>
-    </div>
+        <a
+            href="/habilidades"
+            class={`nav-link ${currentPath === "/habilidades/" ? "active" : ""}`}
+        >
+            Habilidades
+        </a>
+        <a
+            href="/proyectos"
+            class={`nav-link ${currentPath === "/proyectos/" ? "active" : ""}`}
+        >
+            Proyectos
+        </a>
+        <a
+            href="/sobre-mi"
+            class={`nav-link ${currentPath === "/habilidades/" ? "active" : ""}`}
+        >
+            Sobre mí
+        </a>
+    </nav>
 </header>
+
+<style></style>
