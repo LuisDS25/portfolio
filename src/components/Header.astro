@@ -8,7 +8,7 @@ const currentPath = Astro.url.pathname;
         class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
     >
         <img
-            src="/icons/logo.png"
+            src="/portfolio/icons/logo.png"
             alt="LefDev Logo"
             width="45"
             height="45"
@@ -20,26 +20,26 @@ const currentPath = Astro.url.pathname;
 
     <nav class="nav nav-pills">
         <a
-            href="/"
-            class={`nav-link ${currentPath === "/" ? "active" : ""}`}
+            href="/portfolio"
+            class={`nav-link ${currentPath === "/portfolio/" ? "active" : ""}`}
         >
             Inicio
         </a>
         <a
             href="/habilidades"
-            class={`nav-link ${currentPath === "/habilidades" ? "active" : ""}`}
+            class={`nav-link ${currentPath === "/portfolio/habilidades" ? "active" : ""}`}
         >
             Habilidades
         </a>
         <a
             href="/proyectos"
-            class={`nav-link ${currentPath === "/proyectos" ? "active" : ""}`}
+            class={`nav-link ${currentPath === "/portfolio/proyectos" ? "active" : ""}`}
         >
             Proyectos
         </a>
         <a
             href="/sobre-mi"
-            class={`nav-link ${currentPath === "/sobre-mi" ? "active" : ""}`}
+            class={`nav-link ${currentPath === "/portfolio/sobre-mi" ? "active" : ""}`}
         >
             Sobre mí
         </a>
