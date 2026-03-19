@@ -1,14 +1,15 @@
 ---
+const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
 ---
 
 <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
     <a
-        href="/portfolio"
+        href={`${base}`}
         class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
     >
         <img
-            src="/portfolio/icons/logo.png"
+            src={`${base}icons/logo.png`}
             alt="LefDev Logo"
             width="45"
             height="45"
@@ -20,26 +21,26 @@ const currentPath = Astro.url.pathname;
 
     <nav class="nav nav-pills">
         <a
-            href="/portfolio"
-            class={`nav-link ${currentPath === "/portfolio/" ? "active" : ""}`}
+            href={`${base}`}
+            class={`nav-link ${currentPath === base ? "active" : ""}`}
         >
             Inicio
         </a>
         <a
-            href="/habilidades"
-            class={`nav-link ${currentPath === "/portfolio/habilidades" ? "active" : ""}`}
+            href={`${base}skills`}
+            class={`nav-link ${currentPath === `${base}skills` ? "active" : ""}`}
         >
             Habilidades
         </a>
         <a
-            href="/proyectos"
-            class={`nav-link ${currentPath === "/portfolio/proyectos" ? "active" : ""}`}
+            href={`${base}projects`}
+            class={`nav-link ${currentPath === `${base}projects` ? "active" : ""}`}
         >
             Proyectos
         </a>
         <a
-            href="/sobre-mi"
-            class={`nav-link ${currentPath === "/portfolio/sobre-mi" ? "active" : ""}`}
+            href={`${base}about`}
+            class={`nav-link ${currentPath === `${base}about` ? "active" : ""}`}
         >
             Sobre mí
         </a>
