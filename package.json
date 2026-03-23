@@ -3,8 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "generate:content": "node ./scripts/excel-to-md.js",
+    "dev": "npm run generate:content && astro dev",
+    "build": "npm run generate:content && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -14,6 +15,9 @@
     "astro": "^5.16.5",
     "astro-bootstrap": "^0.7.2",
     "bootstrap": "^5.3.8",
-    "sass": "^1.96.0"
+    "fs-extra": "^11.3.4",
+    "sass": "^1.96.0",
+    "slugify": "^1.6.8",
+    "xlsx": "^0.18.5"
   }
 }

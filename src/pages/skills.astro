@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getTopSkills, groupSkillsByClass } from "@/lib/content/skills.service";
+import { getAllSkillsSummaries } from "@/lib/content/skills.repository";
+
+const skillSummaries = await getAllSkillsSummaries();
+const topSkills = getTopSkills(skillSummaries, 5);
+const groupedSkills = groupSkillsByClass(skillSummaries);
+
+var skillDetails;
+---
+
+<Layout>
+    <main>
+        <div class="px-4 py-5 my-5">
+            <h2 class="fw-bold text-white">Resumen Rápido</h2>
+
+            <div
+                class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5"
+            >
+                <div class="col">
+                    <div
+                        class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                    >
+                        <div
+                            class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+                        >
+                            <h3>Mis Top 5 Habilidades</h3>
+                            <ul>
+                                {
+                                    topSkills.map((skill) => (
+                                        <li>
+                                            {skill.data.title} (
+                                            {skill.data.domain})
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-4 py-5 my-5">
+            <h2 class="fw-bold text-white">Habilidades por Categoría</h2>
+
+            {
+                Object.entries(groupedSkills).map(([category, skills]) => (
+                    <div class="mb-4">
+                        <h3>{category}</h3>
+                        <ul>
+                            {skills.map((skill) => (
+                                <li>
+                                    {skill.data.title} ({skill.data.domain})
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))
+            }
+        </div>
+    </main>
+</Layout>

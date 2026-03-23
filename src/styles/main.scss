@@ -1,0 +1,6 @@
+// 1. Sobrescribe variables antes de importar Bootstrap
+@import "variables";
+
+//Importar bootstrap en archivo scss principal
+
+@import "bootstrap/scss/bootstrap";

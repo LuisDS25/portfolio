@@ -5,10 +5,5 @@ $secondary: #191919;
 
 /* Custom text color for the active pill */
 .nav-link.active {
-  color: $secondary !important;
+    color: $secondary !important;
 }
-
-
-//Importar bootstrap en archivo scss principal
-
-@import "../../node_modules/bootstrap/scss/bootstrap";
