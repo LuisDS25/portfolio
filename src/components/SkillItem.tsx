@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL;
 export default function SkillItem({ skill }: SkillItemProps) {
     const [expanded, setExpanded] = useState(false);
 
-    const level = Math.ceil(skill.data.domain / 20);
+    const level = Math.ceil(skill.data.domain / 10);
 
     const toggle = () => {
         setExpanded((prev) => !prev);
@@ -66,7 +66,7 @@ export default function SkillItem({ skill }: SkillItemProps) {
                         <div className="flex-grow-1">
 
                             <div className="d-flex gap-1">
-                                {[1, 2, 3, 4, 5].map(i => (
+                                {[1, 2, 3, 4, 5, 6 ,7, 8, 9, 10].map(i => (
                                     <div
                                         key={i}
                                         className={`flex-fill rounded ${i <= level
@@ -86,7 +86,7 @@ export default function SkillItem({ skill }: SkillItemProps) {
                     <div className="d-flex justify-content-between small text-white-50">
                         <span className="text-white text-opacity-25">1</span>
 
-                        <span className="text-white text-opacity-25">5</span>
+                        <span className="text-white text-opacity-25">10</span>
                     </div>
 
                     <p>{skill.data.description}</p>

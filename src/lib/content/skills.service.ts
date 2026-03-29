@@ -39,6 +39,19 @@ export function groupSkillsByClass(skills: Skill[]): Record<SkillClass, Skill[]>
     return groupBy(skills, (s) => s.data.class);
 }
 
+export function getAverageByGroups(groups: Record<SkillClass, Skill[]>) : { labels: string[], data: number[] } {
+    const labels: string[] = [];
+    const data: number[] = [];
+
+    Object.entries(groups).forEach(([group, skills]) => {
+        const avg = skills.reduce((sum, skill) => sum + skill.data.domain, 0) / skills.length;
+        labels.push(group);
+        data.push(avg);
+    });
+
+    return { labels, data };
+}
+
 
 //Obtener Skill a detalle por slug
 export async function getSkillById(slug: string): Promise<Skill | undefined> {

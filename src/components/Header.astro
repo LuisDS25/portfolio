@@ -49,7 +49,7 @@ const currentPath = Astro.url.pathname;
             </a>
             <a
                 href={`${base}skills`}
-                class={`nav-link p-2 mx-2 ${currentPath === `${base}skills` ? "active" : "text-white"}`}
+                class={`nav-link p-2 mx-2 ${currentPath.startsWith(`${base}skills`) ? "active" : "text-white"}`}
             >
                 Habilidades
             </a>
@@ -64,7 +64,7 @@ const currentPath = Astro.url.pathname;
             </a>
             <a
                 href={`${base}about`}
-                class={`nav-link p-2 mx-2 ${currentPath === `${base}about` ? "active" : "text-white"}`}
+                class={`nav-link p-2 mx-2 ${currentPath.startsWith(`${base}about`) ? "active" : "text-white"}`}
             >
                 Sobre mí
             </a>

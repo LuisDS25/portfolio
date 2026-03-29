@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getBottomSkills, getTopSkills, groupSkillsByClass, getSkillsBySlugs } from "@/lib/content/skills.service";
+import { getBottomSkills, getTopSkills, groupSkillsByClass, getSkillsBySlugs, getAverageByGroups } from "@/lib/content/skills.service";
 import { getAllSkillsSummaries, getAllSkills} from "@/lib/content/skills.repository";
 import SkillItem from "@/components/SkillItem";
+import RadarChart from '../components/RadarChart.jsx';
 const base = import.meta.env.BASE_URL;
 
 const skills = await getAllSkills();
@@ -16,6 +17,7 @@ const selected = getSkillsBySlugs(skillSummaries, [
   'docker',
 ]);
 const groupedSkills = groupSkillsByClass(skills);
+const averageByGroups =getAverageByGroups(groupedSkills);
 ---
 
 <Layout>
@@ -62,59 +64,6 @@ const groupedSkills = groupSkillsByClass(skills);
                     ))}
                     </ul>
                 </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-12 col-md-4 d-flex">
-
-                <div class="card w-100 shadow-lg h-100 text-bg-dark rounded-4">
-
-                    <!-- Header -->
-                    <div class="card-header text-center">
-                    <h3 class="h5 mb-0">Busco mejorar</h3>
-                    </div>
-
-                    <!-- Body -->
-                    <div class="card-body">
-                    <ul class="list-unstyled mb-0">
-                        {bottomSkills.map((skill) => {
-                        const level = Math.ceil(skill.data.domain / 20);
-
-                        return (
-                            <li class="mb-2">
-
-                            <!-- Title -->
-                            <div class="d-flex justify-content-between mb-1">
-                                <span class="fw-semibold">{skill.data.title}</span>
-                                <span class="small"></span>
-                            </div>
-
-                            <!-- Barra segmentada -->
-                            <div class="d-flex gap-1 mb-1">
-                                {[1,2,3,4,5].map((i) => (
-                                <div
-                                    class={`flex-fill rounded ${
-                                    i <= level ? 'bg-primary' : 'bg-secondary bg-opacity-25'
-                                    }`}
-                                    style="height: 6px;"
-                                ></div>
-                                ))}
-                            </div>
-
-                            <!-- Labels -->
-                            <div class="d-flex justify-content-between small text-white-50">
-                                <span class="text-white text-opacity-25">1</span>
-                        
-                                <span class="text-white text-opacity-25">5</span>
-                            </div>
-
-                            </li>
-                        );
-                        })}
-                    </ul>
-                    </div>
 
                 </div>
 
@@ -206,6 +155,80 @@ const groupedSkills = groupSkillsByClass(skills);
                 </div>
 
                 </div>
+            </div>
+
+            <div class="col-12 col-md-4 d-flex">
+
+                <div class="card w-100 shadow-lg h-100 text-bg-dark rounded-4">
+
+                    <!-- Header -->
+                    <div class="card-header text-center">
+                    <h3 class="h5 mb-0">Busco mejorar</h3>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="card-body">
+                    <ul class="list-unstyled mb-0">
+                        {bottomSkills.map((skill) => {
+                        const level = Math.ceil((skill.data.domain / 10));
+
+                        return (
+                            <li class="mb-2">
+
+                            <!-- Title -->
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-semibold">{skill.data.title}</span>
+                                <span class="small"></span>
+                            </div>
+
+                            <!-- Barra segmentada -->
+                            <div class="d-flex gap-1 mb-1">
+                                {[1,2,3,4,5].map((i) => (
+                                <div
+                                    class={`flex-fill rounded ${
+                                    i*2 <= level ? 'bg-primary' : 'bg-secondary bg-opacity-25'
+                                    }`}
+                                    style="height: 6px;"
+                                ></div>
+                                ))}
+                            </div>
+
+                            <!-- Labels -->
+                            <div class="d-flex justify-content-between small text-white-50">
+                                <span class="text-white text-opacity-25">1</span>
+                        
+                                <span class="text-white text-opacity-25">5</span>
+                            </div>
+
+                            </li>
+                        );
+                        })}
+                    </ul>
+                    </div>
+
+                </div>
+
+            </div>
+            </div>
+
+            <div class="row align-items-stretch g-4 py-4">
+            <div class="col-12 col-md-4 d-flex">
+                
+                <div class="card w-100 shadow-lg h-100 text-bg-dark rounded-4">
+
+                <!-- Header -->
+                <div class="card-header text-center">
+                    <h3 class="h5 mb-0">Promedio de grupos</h3>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body">
+                    <RadarChart data={averageByGroups.data} labels={averageByGroups.labels} client:visible />
+                </div>
+
+                </div>
+
+            </div>
             </div>
         </div>
 
