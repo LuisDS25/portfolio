@@ -3,10 +3,11 @@ const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+<header class="sticky-top rounded-4 glass-header mx-2 my-2">
+    <nav class="navbar navbar-expand-lg py-2 px-2 navbar-dark">
     <a
         href={`${base}`}
-        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+        class="navbar-brand d-flex align-items-center text-decoration-none"
     >
         <img
             src={`${base}icons/logo.png`}
@@ -18,33 +19,106 @@ const currentPath = Astro.url.pathname;
         />
         <span class="fs-4 text-white">LefDev</span>
     </a>
+    
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
 
-    <nav class="nav nav-pills">
-        <a
-            href={`${base}`}
-            class={`nav-link ${currentPath === base ? "active" : ""}`}
-        >
-            Inicio
+    <div class="offcanvas offcanvas-end glass-offcanvas" tabindex="-1" id="offcanvasNavbar2"> 
+        <div class="offcanvas-header"> 
+        <a href={`${base}`}
+        class="d-flex align-items-center link-body-emphasis text-decoration-none">
+            <img
+                src={`${base}icons/logo.png`}
+                alt="LefDev Logo"
+                width="45"
+                height="45"
+                class="bi me-2"
+                aria-hidden="true"
+            />
+            <span class="fs-4 text-white">LefDev</span>
         </a>
-        <a
-            href={`${base}skills`}
-            class={`nav-link ${currentPath === `${base}skills` ? "active" : ""}`}
-        >
-            Habilidades
-        </a>
-        <a
-            href={`${base}projects`}
-            class={`nav-link ${currentPath === `${base}projects` ? "active" : ""}`}
-        >
-            Proyectos
-        </a>
-        <a
-            href={`${base}about`}
-            class={`nav-link ${currentPath === `${base}about` ? "active" : ""}`}
-        >
-            Sobre mí
-        </a>
-    </nav>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button> 
+        </div> 
+        
+        <div class="offcanvas-body"> 
+            <nav class="navbar-nav nav-pills justify-content-end flex-grow-1 pe-3">
+            <a
+                href={`${base}`}
+                class={`nav-link p-2 mx-2 ${currentPath === base ? "active" : "text-white"}`}
+            >
+                Inicio
+            </a>
+            <a
+                href={`${base}skills`}
+                class={`nav-link p-2 mx-2 ${currentPath === `${base}skills` ? "active" : "text-white"}`}
+            >
+                Habilidades
+            </a>
+            <a
+                href={`${base}projects`}
+                class={`nav-link p-2 mx-2 ${ currentPath.startsWith(`${base}projects`)
+                ? "active"
+                : "text-white"  
+                }`}
+            >
+                Proyectos
+            </a>
+            <a
+                href={`${base}about`}
+                class={`nav-link p-2 mx-2 ${currentPath === `${base}about` ? "active" : "text-white"}`}
+            >
+                Sobre mí
+            </a>
+            </nav>
+        </div>
+    </div>
+
 </header>
 
-<style></style>
+<style>
+    .glass-header {
+    background: rgba(33, 37, 41, 0.2); // equivalente a dark con transparencia
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); // Safari
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .glass-offcanvas {
+    background: rgba(25, 25, 25, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-left: 1px solid rgba(191, 255, 0, 0.15);
+
+    /* Gradiente + puntos de luz */
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(191, 255, 0, 0.12), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(191, 255, 0, 0.08), transparent 30%);
+    }
+
+    @media (min-width: 992px) {
+    .glass-offcanvas {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+        background: #191919; /* sólido limpio */
+        background-image: none; /* sin puntos de luz */
+    }
+    }
+
+    .nav-pills .nav-link{
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .nav-pills .nav-link:hover {
+        color: #BFFF00;
+        background: rgba(191, 255, 0, 0.08);
+    }
+
+    .nav-pills .nav-link.active {
+        background: linear-gradient(90deg, rgba(191, 255, 0, 0.6), #BFFF00);
+        border: none;
+        color: #000; // mejor contraste con verde neón
+        transition: all 0.3s ease;
+    }
+</style>

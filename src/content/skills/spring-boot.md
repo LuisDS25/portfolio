@@ -1,16 +1,22 @@
 ---
+slug: "spring-boot"
 title: "Spring Boot"
-description: "He usado Spring Boot para crear aplicaciones web completas."
-domain: 60
+description: "Uso Spring Boot para desarrollar APIs REST y aplicaciones backend robustas, integrando múltiples servicios y gestionando lógica de negocio compleja."
+domain: 80
 class: "Backend"
-image: "/images/spring-boot.png"
+image: "spring-boot.png"
 
 challenges:
-  - "Challenge 1"
-  - "Challenge 2"
-
+  - "Configuración de proyectos enterprise"
+  - "Manejo de errores globales y validaciones"
+actions:
+  - "Desarrollé APIs REST para citas e inscripciones"
+  - "Implementé controladores, servicios y repositorios"
+  - "Configuré manejo global de excepciones"
 impact:
-  - "Impact 1"
+  - "Backend estable y escalable"
+  - "Estandarización de respuestas al cliente"
 projects:
-  - "Project 2"
+  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
+  - "Plataforma digital de gestión académica y captación de alumnos"
 ---

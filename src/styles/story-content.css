@@ -1,0 +1,143 @@
+.story-nav-wrapper {
+    position: relative;
+    width: 100%;
+
+    /* 🔥 separa del contenido */
+    margin-top: 1rem;
+
+    display: flex;
+    justify-content: flex-start;
+    /* desktop → izquierda */
+}
+
+/* 🔥 contenedor visual */
+.story-nav {
+    padding: 5px 10px;
+    border-radius: 50px;
+
+    /* GLASS */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    /* sombra sutil */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    /* animación ligera */
+    transition: all 0.25s ease;
+}
+
+.story-nav button {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-weight: 400;
+    font-size: 0.9rem;
+
+    padding: 6px 10px;
+    border-radius: 20px;
+
+    transition: all 0.2s ease;
+}
+
+/* hover elegante */
+.story-nav button:hover {
+    color: #bfff00;
+    background: rgba(191, 255, 0, 0.08);
+}
+
+/* 🔥 estado activo (prep para siguiente iteración) */
+.story-nav button.active {
+    color: #bfff00;
+    background: rgba(191, 255, 0, 0.15);
+    box-shadow: 0 0 6px rgba(191, 255, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+    .story-nav-wrapper {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    
+        z-index: 999;
+    
+        /* centrado */
+        display: flex;
+        justify-content: center;
+    
+        padding: 10px 0;
+        padding-bottom: env(safe-area-inset-bottom);
+    
+        /* fondo sutil para separación */
+        background: linear-gradient(to top,
+                rgba(0, 0, 0, 0.8),
+                rgba(0, 0, 0, 0));
+    }
+
+    .story-nav {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .story-nav button {
+        flex: 0 0 auto;
+    }
+
+    .hero-content {
+        align-items: stretch;
+        margin-top: -10px;
+        padding-bottom: 80px;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+        color: #dcdcdc;
+    }
+
+    .hero-scroll-content {
+        max-height: none;
+        overflow: visible;
+    }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+    .hero-scroll-content {
+        max-height: 200px;
+        overflow-y: auto;
+
+        /* ocultar scrollbar */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .hero-scroll-content::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Texto */
+.hero-content p {
+    font-size: 1.2rem;
+    color: #dcdcdc;
+}
+
+.hero-content {
+    transition: opacity 0.2s ease;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}

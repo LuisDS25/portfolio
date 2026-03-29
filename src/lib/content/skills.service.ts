@@ -7,11 +7,31 @@ export async function getSkillSummaries(): Promise<Skill[]> {
     return await getAllSkills();
 }
 
+// 🔹 Obtener skills por lista de slugs
+export function getSkillsBySlugs(
+    skills: Skill[],
+    slugs: string[]
+): Skill[] {
+    const slugSet = new Set(slugs); // 🔥 O(1) lookup
+
+    return skills.filter(skill => slugSet.has(skill.data.slug));
+}
+
 // 🔝 Top N skills por domain (en version SkillSummary)
 export function getTopSkills(skills: Skill[], limit = 5): Skill[] {
     return [...skills]
         .sort((a, b) => b.data.domain - a.data.domain)
         .slice(0, limit)
+}
+
+// 🔻 Bottom N skills por domain
+export function getBottomSkills(
+    skills: Skill[],
+    limit = 5
+): Skill[] {
+    return [...skills] // 🔥 evitar mutación
+        .sort((a, b) => a.data.domain - b.data.domain)
+        .slice(0, limit);
 }
 
 // 📦 Group by class (en version SkillSummary)

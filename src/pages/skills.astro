@@ -1,61 +1,230 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getTopSkills, groupSkillsByClass } from "@/lib/content/skills.service";
-import { getAllSkillsSummaries } from "@/lib/content/skills.repository";
+import { getBottomSkills, getTopSkills, groupSkillsByClass, getSkillsBySlugs } from "@/lib/content/skills.service";
+import { getAllSkillsSummaries, getAllSkills} from "@/lib/content/skills.repository";
+import SkillItem from "@/components/SkillItem";
+const base = import.meta.env.BASE_URL;
 
+const skills = await getAllSkills();
 const skillSummaries = await getAllSkillsSummaries();
 const topSkills = getTopSkills(skillSummaries, 5);
-const groupedSkills = groupSkillsByClass(skillSummaries);
-
-var skillDetails;
+const bottomSkills = getBottomSkills(skillSummaries, 5);
+const selected = getSkillsBySlugs(skillSummaries, [
+  'java',
+  'spring-boot',
+  'mysql',
+  'docker',
+]);
+const groupedSkills = groupSkillsByClass(skills);
 ---
 
 <Layout>
     <main>
-        <div class="px-4 py-5 my-5">
+        <div class="px-4 py-4 my-4">
             <h2 class="fw-bold text-white">Resumen Rápido</h2>
 
-            <div
-                class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5"
-            >
-                <div class="col">
-                    <div
-                        class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                    >
-                        <div
-                            class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
-                        >
-                            <h3>Mis Top 5 Habilidades</h3>
-                            <ul>
-                                {
-                                    topSkills.map((skill) => (
-                                        <li>
-                                            {skill.data.title} (
-                                            {skill.data.domain})
-                                        </li>
-                                    ))
-                                }
-                            </ul>
+            <!-- Cards -->
+            <div class="row align-items-stretch g-4 py-4">
+            <div class="col-12 col-md-4 d-flex">
+                
+                <div class="card w-100 shadow-lg h-100 text-bg-dark rounded-4">
+
+                <!-- Header -->
+                <div class="card-header text-center">
+                    <h3 class="h5 mb-0">Mis Top 5 Habilidades</h3>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body">
+                    <ul class="list-unstyled mb-0">
+                    {topSkills.map((skill) => (
+                        <li class="mb-4">
+
+                        <!-- Title + % -->
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-semibold">{skill.data.title}</span>
+                            <span class="small">{skill.data.domain}%</span>
                         </div>
+
+                        <!-- Progress -->
+                        <div class="progress" style="height: 10px;">
+                            <div
+                            class="progress-bar"
+                            role="progressbar"
+                            style={`width: ${skill.data.domain}%`}
+                            aria-valuenow={skill.data.domain}
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            ></div>
+                        </div>
+
+                        </li>
+                    ))}
+                    </ul>
+                </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-12 col-md-4 d-flex">
+
+                <div class="card w-100 shadow-lg h-100 text-bg-dark rounded-4">
+
+                    <!-- Header -->
+                    <div class="card-header text-center">
+                    <h3 class="h5 mb-0">Busco mejorar</h3>
                     </div>
+
+                    <!-- Body -->
+                    <div class="card-body">
+                    <ul class="list-unstyled mb-0">
+                        {bottomSkills.map((skill) => {
+                        const level = Math.ceil(skill.data.domain / 20);
+
+                        return (
+                            <li class="mb-2">
+
+                            <!-- Title -->
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-semibold">{skill.data.title}</span>
+                                <span class="small"></span>
+                            </div>
+
+                            <!-- Barra segmentada -->
+                            <div class="d-flex gap-1 mb-1">
+                                {[1,2,3,4,5].map((i) => (
+                                <div
+                                    class={`flex-fill rounded ${
+                                    i <= level ? 'bg-primary' : 'bg-secondary bg-opacity-25'
+                                    }`}
+                                    style="height: 6px;"
+                                ></div>
+                                ))}
+                            </div>
+
+                            <!-- Labels -->
+                            <div class="d-flex justify-content-between small text-white-50">
+                                <span class="text-white text-opacity-25">1</span>
+                        
+                                <span class="text-white text-opacity-25">5</span>
+                            </div>
+
+                            </li>
+                        );
+                        })}
+                    </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-12 col-md-4 d-flex">
+
+                <div class="card w-100 shadow-lg h-100 text-bg-dark rounded-4">
+
+                <!-- Header -->
+                <div class="card-header text-center">
+                    <h3 class="h5 mb-0">Mi stack</h3>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body">
+                <ul class="list-unstyled mb-0">
+
+                    {selected.map((skill) => {
+                    const percentage = skill.data.domain;
+
+                    return (
+                        <li class="d-flex align-items-center justify-content-between mb-4">
+
+                        <!-- IZQUIERDA: círculo + imagen -->
+                        <div
+                        class="position-relative d-flex align-items-center justify-content-center"
+                        style={`
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50%;
+                            background: conic-gradient(
+                            var(--bs-primary) ${percentage}%,
+                            rgba(255,255,255,0.1) ${percentage}%
+                            );
+                        `}
+                        >
+
+                        <!-- Inner circle -->
+                        <div
+                            class="position-relative overflow-hidden"
+                            style="
+                            width: 46px;
+                            height: 46px;
+                            border-radius: 50%;
+                            "
+                        >
+
+                            <!-- Imagen de fondo -->
+                            <img
+                            src={`${base}images/${skill.data.image}`}
+                            alt={skill.data.title}
+                            style="
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                filter: grayscale(100%) brightness(0.65);
+                            "
+                            />
+
+                            <!-- Overlay oscuro (mejora contraste) -->
+                            <div
+                            class="position-absolute top-0 start-0 w-100 h-100"
+                            style="background: rgba(0, 0, 0, 0.4);"
+                            ></div>
+
+                            <!-- Porcentaje -->
+                            <div
+                            class="position-absolute top-50 start-50 translate-middle text-white"
+                            style="font-size: 0.75rem;"
+                            >
+                            {percentage}%
+                            </div>
+
+                        </div>
+
+                        </div>
+
+                        <!-- DERECHA: título -->
+                        <div class="ms-3 flex-grow-1">
+                            <span class="fw-semibold">{skill.data.title}</span>
+                        </div>
+
+                        </li>
+                    );
+                    })}
+
+                </ul>
+                </div>
+
                 </div>
             </div>
         </div>
 
-        <div class="px-4 py-5 my-5">
+        <div class="px-4 py-4 my-4">
             <h2 class="fw-bold text-white">Habilidades por Categoría</h2>
+
+            <div class="border-bottom mb-4"></div>
 
             {
                 Object.entries(groupedSkills).map(([category, skills]) => (
                     <div class="mb-4">
-                        <h3>{category}</h3>
-                        <ul>
-                            {skills.map((skill) => (
-                                <li>
-                                    {skill.data.title} ({skill.data.domain})
-                                </li>
+                        <h3 class="text-primary">{category}</h3>
+                        {skills.map(skill => (
+                            <div class="card w-100 h-100 text-bg-dark rounded-4 mb-1">
+                            <div class="card-body" id={skill.data.slug}>
+                            <SkillItem skill={skill} client:visible />
+                            </div>
+                            </div>
                             ))}
-                        </ul>
                     </div>
                 ))
             }

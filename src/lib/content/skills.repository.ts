@@ -5,10 +5,6 @@ import type { Skill, SkillSummary } from '@/types/content';
 export async function getAllSkills(): Promise<Skill[]> {
     const skills = await getCollection('skills');
 
-    console.log('Skills encontradas:', skills.length);
-
-    skills.forEach(s => console.log(s.data.title));
-
     return skills;
 }
 
@@ -21,9 +17,14 @@ export async function getAllSkillsSummaries(): Promise<SkillSummary[]> {
 
 
 //skill por slug
-export async function getSkillBySlug(slug: string): Promise<Skill | undefined> {
-    const skills = await getCollection('skills');
-    return await getEntry('skills', slug);
+export async function getSkillBySlug(slug: string): Promise<Skill> {
+    const skill = await getEntry('skills', slug);
+
+    if (!skill) {
+        throw new Error(`Skill no encontrada para slug: ${slug}`);
+    }
+
+    return skill;
 }
 
 // 🔹 Mapper interno (privado del repository)

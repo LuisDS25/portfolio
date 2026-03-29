@@ -1,7 +1,244 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getAllProjects } from "@/lib/content/projects.repository";
+const base = import.meta.env.BASE_URL;
+
+const projects = await getAllProjects();
 ---
 
 <Layout>
-    <main></main>
+    <section class="projects-section d-flex flex-column justify-content-center">
+        <div class="projects-wrapper position-relative">
+            <!-- SCROLL -->
+            <div class="projects-scroll">
+                {
+                    projects.map((project) => (
+                        <div class="project-card">
+                            <div
+                                class="project-bg"
+                                style={`background-image: url(${base}images/${project.data.image});`}
+                            />
+                    
+                            <div
+                                class="project-overlay"
+                            >
+                                <h3 class="project-title">
+                                    {project.data.title}
+                                </h3>
+                                <div class="details">
+                                    <p class="small">{project.data.hook}</p>
+                                    <a
+                                        class="project-cta text-decoration-none"
+                                        href={`${base}projects/${project.data.slug}`}
+                                    >
+                                        SABER MÁS →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <!-- CONTROLES -->
+            <div class="projects-controls d-none d-lg-flex">
+                <button class="carousel-btn left" id="scrollLeft"> ‹ </button>
+
+                <button class="carousel-btn right" id="scrollRight"> › </button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .projects-section {
+            overflow-x: hidden;
+            overflow-y: visible;
+        }
+
+        /* SCROLL HORIZONTAL */
+        .projects-scroll {
+            display: flex;
+            gap: 15px;
+
+            overflow-x: auto;
+            overflow-y: visible;
+
+            padding: 40px 16px;
+
+            scroll-snap-type: x mandatory;
+        }
+
+        /* ocultar scrollbar */
+        .projects-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* CARD */
+        .project-card {
+            position: relative;
+
+            flex: 0 0 85%;
+            height: 350px;
+
+            border-radius: 20px;
+            overflow: hidden;
+
+            scroll-snap-align: center;
+
+            background: #111;
+
+            transition:
+                transform 0.35s ease,
+                opacity 0.35s ease;
+        }
+
+        /* DESKTOP */
+        @media (min-width: 992px) {
+            .project-card {
+                flex: 0 0 30%; /* 3 visibles */
+                height: 500px;
+            }
+
+            .projects-scroll:hover .project-card {
+                transform: scale(0.95);
+                opacity: 0.7;
+            }
+
+            .projects-scroll .project-card:hover {
+                transform: scale(1.05);
+                opacity: 1;
+                z-index: 2;
+                box-shadow: 0 0 20px rgba(191, 255, 0, 0.25);
+            }
+        }
+
+        /* BACKGROUND */
+        .project-bg {
+            position: absolute;
+            inset: 0;
+
+            background-size: cover;
+            background-position: center;
+
+            filter: brightness(0.6);
+        }
+
+        /* OVERLAY */
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            padding: 20px;
+
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.8),
+                transparent
+            );
+        }
+
+        /* TITLE */
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        /* CTA */
+        .project-cta {
+            color: #bfff00;
+            font-size: 0.9rem;
+            margin-top: 6px;
+        }
+
+        .details {
+            display: none;
+            transition: all 0.6s ease;
+        }
+
+        .project-card:hover .details {
+            display: block;
+        }
+
+        .projects-wrapper {
+            position: relative;
+        }
+
+        /* CONTROLES */
+        .projects-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+
+            display: flex;
+            justify-content: space-between;
+
+            pointer-events: none; /* 👈 clave */
+        }
+
+        /* BOTONES */
+        .carousel-btn {
+            pointer-events: all;
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+            border: 1px solid rgba(191, 255, 0, 0.2);
+
+            background: rgba(25, 25, 25, 0.5);
+            backdrop-filter: blur(6px);
+
+            color: #bfff00;
+            font-size: 1.5rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: all 0.25s ease;
+        }
+
+        /* hover */
+        .carousel-btn:hover {
+            background: rgba(191, 255, 0, 0.1);
+            box-shadow: 0 0 10px rgba(191, 255, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+        /* posicionamiento */
+        .carousel-btn.left {
+            margin-left: 10px;
+        }
+
+        .carousel-btn.right {
+            margin-right: 10px;
+        }
+    </style>
+
+    <script>
+        const scrollContainer = document.querySelector(".projects-scroll");
+        const scrollLeftBtn = document.getElementById("scrollLeft");
+        const scrollRightBtn = document.getElementById("scrollRight");
+
+        if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+            scrollLeftBtn.addEventListener("click", () => {
+                scrollContainer.scrollBy({
+                    left: -scrollContainer.clientWidth,
+                    behavior: "smooth",
+                });
+            });
+
+            scrollRightBtn.addEventListener("click", () => {
+                scrollContainer.scrollBy({
+                    left: scrollContainer.clientWidth,
+                    behavior: "smooth",
+                });
+            });
+        }
+    </script>
 </Layout>

@@ -10,12 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^5.0.1",
     "@popperjs/core": "^2.11.8",
     "@types/bootstrap": "^5.2.10",
     "astro": "^5.16.5",
     "astro-bootstrap": "^0.7.2",
     "bootstrap": "^5.3.8",
     "fs-extra": "^11.3.4",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "sass": "^1.96.0",
     "slugify": "^1.6.8",
     "xlsx": "^0.18.5"
