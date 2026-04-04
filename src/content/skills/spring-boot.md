@@ -1,22 +1,22 @@
 ---
 slug: "spring-boot"
 title: "Spring Boot"
-description: "Uso Spring Boot para desarrollar APIs REST y aplicaciones backend robustas, integrando múltiples servicios y gestionando lógica de negocio compleja."
-domain: 80
+description: "I use Spring Boot to develop robust REST APIs and backend applications, integrating multiple services and managing complex business logic."
+domain: 78
 class: "Backend"
 image: "spring-boot.png"
 
 challenges:
-  - "Configuración de proyectos enterprise"
-  - "Manejo de errores globales y validaciones"
+  - "Enterprise project configuration"
+  - "Global error handling and validations"
 actions:
-  - "Desarrollé APIs REST para citas e inscripciones"
-  - "Implementé controladores, servicios y repositorios"
-  - "Configuré manejo global de excepciones"
+  - "I developed clear and easy-to-integrate REST APIs"
+  - "I implemented controllers, services, and repositories"
+  - "I configured global exception handling"
 impact:
-  - "Backend estable y escalable"
-  - "Estandarización de respuestas al cliente"
+  - "Stable and scalable backend"
+  - "Standardized customer responses"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
-  - "Plataforma digital de gestión académica y captación de alumnos"
+  - "Medical appointment management system with real-time synchronization"
+  - "Digital platform for academic management and student recruitment"
 ---

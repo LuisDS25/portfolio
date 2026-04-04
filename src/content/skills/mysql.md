@@ -1,21 +1,21 @@
 ---
 slug: "mysql"
 title: "MySQL"
-description: "Diseño y optimizo bases de datos relacionales en MySQL, asegurando integridad y rendimiento en operaciones de lectura y escritura."
+description: "I design and optimize relational databases in MySQL, ensuring integrity and performance in read and write operations."
 domain: 75
 class: "Backend"
 image: "mysql.png"
 
 challenges:
-  - "Modelar relaciones complejas"
-  - "Optimizar consultas (N+1 queries, índices)"
+  - "Modeling complex relationships"
+  - "Optimizing queries (N+1 queries, indexes)"
 actions:
-  - "Diseñé esquemas relacionales para ambos sistemas"
-  - "Optimicé consultas usando índices y refactorización"
+  - "I designed relational schemas for precise and structured systems"
+  - "I optimized queries using indexes and refactoring"
 impact:
-  - "Mejora en rendimiento de consultas"
-  - "Consistencia en datos críticos"
+  - "Improved query performance"
+  - "Consistency in critical data"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
-  - "Plataforma digital de gestión académica y captación de alumnos"
+  - "Medical appointment management system with real-time synchronization"
+  - "Digital platform for academic management and student recruitment"
 ---

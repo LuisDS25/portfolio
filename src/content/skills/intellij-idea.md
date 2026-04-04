@@ -1,19 +1,19 @@
 ---
 slug: "intellij-idea"
 title: "IntelliJ IDEA"
-description: "Uso IntelliJ IDEA como entorno principal para desarrollo backend en Java, aprovechando herramientas de productividad y debugging."
+description: "I use IntelliJ IDEA as my main environment for backend development in Java, taking advantage of productivity and debugging tools."
 domain: 80
-class: "Herramientas"
+class: "Tools"
 
 
 challenges:
-  - "Configuración inicial y manejo de herramientas avanzadas"
+  - "Initial setup and handling of advanced tools"
 actions:
-  - "Desarrollé y depuré aplicaciones backend"
-  - "Utilicé herramientas de navegación y debugging"
+  - "I developed and debugged backend applications"
+  - "I used navigation and debugging tools"
 impact:
-  - "Mayor productividad en desarrollo backend"
+  - "Increased productivity in backend development"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
-  - "Plataforma digital de gestión académica y captación de alumnos"
+  - "Medical appointment management system with real-time synchronization"
+  - "Digital platform for academic management and student recruitment"
 ---

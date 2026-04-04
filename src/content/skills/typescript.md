@@ -1,18 +1,18 @@
 ---
 slug: "typescript"
 title: "TypeScript"
-description: "Uso TypeScript para desarrollar aplicaciones frontend tipadas, mejorando mantenibilidad, escalabilidad y detección temprana de errores."
-domain: 65
+description: "I use TypeScript to develop typed frontend applications, improving maintainability, scalability, and early error detection."
+domain: 60
 class: "Frontend"
 
 
 challenges:
-  - "Tipado de modelos complejos"
+  - "Typing of complex models"
 actions:
-  - "Definí interfaces y tipos para datos de APIs"
-  - "Implementé lógica de frontend con tipado fuerte"
+  - "I defined interfaces and types for API data"
+  - "I implemented strongly typed frontend logic"
 impact:
-  - "Reducción de errores en tiempo de desarrollo"
+  - "Reduction of errors during development time"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
+  - "Medical appointment management system with real-time synchronization"
 ---

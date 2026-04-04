@@ -1,18 +1,18 @@
 ---
 slug: "uml"
 title: "UML"
-description: "Uso diagramas UML básicos para modelar sistemas, entender relaciones entre componentes y comunicar ideas de diseño."
+description: "I use basic UML diagrams to model systems, understand relationships between components, and communicate design ideas."
 domain: 75
-class: "Otros"
+class: "Others"
 
 
 challenges:
-  - "Traducir requerimientos ambiguos a estructuras claras"
+  - "Translating ambiguous requirements into clear structures"
 actions:
-  - "Modelé entidades y relaciones antes de implementación"
+  - "I modeled entities and relationships before implementation"
 impact:
-  - "Mejor entendimiento del sistema antes de construirlo"
+  - "Better understanding of the system before building it"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
-  - "Plataforma digital de gestión académica y captación de alumnos"
+  - "Medical appointment management system with real-time synchronization"
+  - "Digital platform for academic management and student recruitment"
 ---

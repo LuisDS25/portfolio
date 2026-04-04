@@ -1,20 +1,21 @@
 ---
 slug: "postman"
 title: "Postman"
-description: "Uso Postman para probar, validar y documentar endpoints REST, asegurando correcto funcionamiento de APIs."
+description: "I use Postman to test, validate, and document REST endpoints, ensuring the correct functioning of APIs."
 domain: 75
-class: "Testing & Calidad"
+class: "Testing & Quality"
 
 
 challenges:
-  - "Validar múltiples escenarios de API"
-  - "Probar integraciones con servicios externos"
+  - "Validate multiple API scenarios"
+  - "Test integrations with external services"
 actions:
-  - "Probé endpoints REST en diferentes escenarios"
-  - "Validé flujos completos de API (agendamiento, inscripción)"
+  - "I tested REST endpoints in different scenarios"
+  - "I validated complete API flows (scheduling, registration)"
 impact:
-  - "APIs más confiables antes de integración frontend"
-  - "Detección temprana de errores"
+  - "More reliable APIs before frontend integration"
+  - "Early error detection"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
+  - "Medical appointment management system with real-time synchronization"
+  - "Digital platform for academic management and student recruitment"
 ---

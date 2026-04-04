@@ -1,20 +1,20 @@
 ---
 slug: "virtual-private-server"
 title: "Virtual Private Server"
-description: "Configuración y administración básica de servidores VPS para desplegar aplicaciones web y gestionar infraestructura."
-domain: 70
+description: "Basic configuration and administration of VPS servers to deploy web applications and manage infrastructure."
+domain: 65
 class: "DevOps & Cloud"
 
 
 challenges:
-  - "Configurar entorno productivo desde cero"
-  - "Asegurar disponibilidad y acceso seguro"
+  - "Configure a production environment from scratch"
+  - "Ensure availability and secure access"
 actions:
-  - "Configuré servidor VPS para despliegue de aplicación"
-  - "Gestioné servicios necesarios para backend y proxy"
+  - "I configured a VPS server for application deployment"
+  - "I managed the necessary services for the backend and proxy"
 impact:
-  - "Control total sobre entorno de producción"
-  - "Independencia de plataformas gestionadas"
+  - "Full control over the production environment"
+  - "Independence from managed platforms"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
+  - "Medical appointment management system with real-time synchronization"
 ---

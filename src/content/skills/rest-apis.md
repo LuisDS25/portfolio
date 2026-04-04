@@ -1,21 +1,21 @@
 ---
 slug: "rest-apis"
 title: "REST APIs"
-description: "Diseño e implementación de APIs RESTful para exponer y consumir servicios backend, siguiendo convenciones estándar para interoperabilidad entre sistemas."
-domain: 85
-class: "Integración & Arquitectura"
+description: "Design and implementation of RESTful APIs to expose and consume backend services, following standard conventions for interoperability between systems."
+domain: 87
+class: "Integration & Architecture"
 
 
 challenges:
-  - "Definir endpoints claros para múltiples flujos (citas, pacientes, inscripciones)"
-  - "Manejar consistencia en respuestas y errores"
+  - "Define clear endpoints for multiple flows and cases"
+  - "Manage consistency in responses and errors"
 actions:
-  - "Diseñé endpoints REST para gestión de citas, pacientes e inscripciones"
-  - "Implementé manejo global de errores y respuestas estandarizadas"
+  - "I designed REST endpoints for data management and consumption"
+  - "I implemented global error handling and standardized responses"
 impact:
-  - "APIs fáciles de consumir por frontend y servicios externos"
-  - "Reducción de errores de integración"
+  - "Easy-to-consume APIs for frontends and external services"
+  - "Reduced integration errors"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
-  - "Plataforma digital de gestión académica y captación de alumnos"
+  - "Medical appointment management system with real-time synchronization"
+  - "Digital platform for academic management and student recruitment"
 ---

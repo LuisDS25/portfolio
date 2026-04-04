@@ -1,22 +1,22 @@
 ---
 slug: "thymeleaf"
 title: "Thymeleaf"
-description: "Uso Thymeleaf como motor de plantillas para construir interfaces web dinámicas renderizadas en el servidor, integrando datos del backend directamente en vistas HTML bajo el patrón MVC."
-domain: 70
+description: "I use Thymeleaf as a template engine to build dynamic web interfaces rendered on the server, integrating backend data directly into HTML views under the MVC pattern."
+domain: 68
 class: "Frontend"
 
 
 challenges:
-  - "Integrar lógica de presentación con datos provenientes del backend"
-  - "Mantener claridad en vistas con múltiples responsabilidades"
-  - "Adaptar el diseño sin frameworks modernos de frontend"
+  - "Integrate presentation logic with data from the backend"
+  - "Maintain clarity in views with multiple responsibilities"
+  - "Adapt the design without modern frontend frameworks"
 actions:
-  - "Desarrollé vistas dinámicas con Thymeleaf integradas a Spring MVC"
-  - "Implementé formularios para procesos de inscripción y gestión académica"
-  - "Reutilicé templates para mantener consistencia en la interfaz"
+  - "I developed dynamic views with Thymeleaf integrated into Spring MVC"
+  - "I implemented forms for registration and academic management processes"
+  - "I reused templates to maintain interface consistency"
 impact:
-  - "Interfaces funcionales con menor complejidad arquitectónica"
-  - "Reducción del tiempo de desarrollo en etapas tempranas"
+  - "Functional interfaces with less architectural complexity"
+  - "Reduced development time in early stages"
 projects:
-  - "Plataforma digital de gestión académica y captación de alumnos"
+  - "Digital platform for academic management and student recruitment"
 ---

@@ -31,11 +31,11 @@ export default function RadarChart({ labels, data }: Props) {
         'Backend': 'Back',
         'DevOps & Cloud': 'Cloud',
         'Core': 'Core',
-        'Integración & Arquitectura': 'Integraciones',
-        'Testing & Calidad': 'Testing',
+        'Integration & Architecture': 'Integration',
+        'Testing & Quality': 'Testing',
     };
 
-    const allowedGroups = ['Frontend', 'Backend', 'DevOps & Cloud', 'Core', 'Integración & Arquitectura']; // 👈 control total
+    const allowedGroups = ['Frontend', 'Backend', 'DevOps & Cloud', 'Core', 'Integration & Architecture'];
 
     // 🎯 2. Filtrar y transformar
     const filtered = labels
@@ -52,7 +52,7 @@ export default function RadarChart({ labels, data }: Props) {
         labels: finalLabels,
         datasets: [
             {
-                label: '', // ❌ quitamos "Skill Level"
+                label: '', // ❌ quita "Skill Level"
                 data: finalData,
                 fill: true,
                 backgroundColor: '#BFFF0033', // 20% opacity

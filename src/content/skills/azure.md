@@ -1,20 +1,20 @@
 ---
 slug: "azure"
 title: "Azure"
-description: "Uso de servicios cloud en Azure para desplegar aplicaciones web, aprovechando entornos PaaS para simplificar la infraestructura."
+description: "Using cloud services in Azure to deploy web applications, leveraging PaaS environments to simplify infrastructure."
 domain: 60
 class: "DevOps & Cloud"
 
 
 challenges:
-  - "Desplegar una aplicación completa con recursos limitados"
-  - "Integrar contenedores con servicios cloud"
+  - "Deploy a complete application with limited resources"
+  - "Integrate containers with cloud services"
 actions:
-  - "Desplegué aplicación en Azure App Service"
-  - "Integré despliegue desde Docker Hub"
+  - "I deployed the application to Azure App Service"
+  - "I integrated the deployment from Docker Hub"
 impact:
-  - "Disponibilidad de la aplicación en la nube"
-  - "Base para escalabilidad futura"
+  - "Application availability in the cloud"
+  - "Basis for future scalability"
 projects:
-  - "Plataforma digital de gestión académica y captación de alumnos"
+  - "Digital platform for academic management and student recruitment"
 ---

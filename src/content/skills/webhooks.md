@@ -1,21 +1,21 @@
 ---
 slug: "webhooks"
 title: "Webhooks"
-description: "Implementación de webhooks para recibir eventos en tiempo real desde servicios externos y sincronizar datos entre sistemas."
+description: "Implementation of webhooks to receive real-time events from external services and synchronize data between systems."
 domain: 70
-class: "Integración & Arquitectura"
+class: "Integration & Architecture"
 
 
 challenges:
-  - "Manejo de expiración y renovación de suscripciones"
-  - "Procesamiento seguro de eventos entrantes"
+  - "Subscription expiration and renewal management"
+  - "Secure processing of incoming events"
 actions:
-  - "Implementé endpoints para recepción de webhooks"
-  - "Gestioné ciclos de vida de suscripciones (renovación y expiración)"
-  - "Procesé eventos para actualizar estado de citas"
+  - "I implemented endpoints for receiving webhooks"
+  - "I managed subscription lifecycles (renewal and expiration)"
+  - "I processed events to update appointment status"
 impact:
-  - "Sincronización en tiempo real entre sistemas"
-  - "Reducción de inconsistencias de datos"
+  - "Real-time synchronization between systems"
+  - "Reduction of data inconsistencies"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
+  - "Medical appointment management system with real-time synchronization"
 ---

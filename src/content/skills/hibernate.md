@@ -1,21 +1,21 @@
 ---
 slug: "hibernate"
 title: "Hibernate"
-description: "Uso Hibernate como ORM para mapear entidades Java a bases de datos relacionales, optimizando el acceso y persistencia de datos."
+description: "I use Hibernate as an ORM to map Java entities to relational databases, optimizing data access and persistence."
 domain: 70
 class: "Backend"
 
 
 challenges:
-  - "Problemas de rendimiento (N+1 queries)"
-  - "Manejo de relaciones entre entidades"
+  - "Performance problems (N+1 queries)"
+  - "Handling relationships between entities"
 actions:
-  - "Implementé repositorios con JPA/Hibernate"
-  - "Optimicé consultas y estrategias de carga (lazy/eager)"
+  - "I implemented repositories with JPA/Hibernate"
+  - "I optimized queries and loading strategies (lazy/eager)"
 impact:
-  - "Mejor rendimiento en acceso a datos"
-  - "Simplificación del manejo de persistencia"
+  - "Improved data access performance"
+  - "Simplified persistence management"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
-  - "Plataforma digital de gestión académica y captación de alumnos"
+  - "Medical appointment management system with real-time synchronization"
+  - "Digital platform for academic management and student recruitment"
 ---

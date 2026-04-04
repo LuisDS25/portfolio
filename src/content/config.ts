@@ -14,7 +14,7 @@ const skills = defineCollection({
         title: z.string(),
         description: z.string(),
         domain: z.number().max(100).min(0),
-        class: z.enum(['Core', 'Backend', 'Integración & Arquitectura', 'Frontend', 'DevOps & Cloud', 'Testing & Calidad', 'Herramientas', 'Soft Skills', 'Otros']),
+        class: z.enum(['Core', 'Backend', 'Integration & Architecture', 'Frontend', 'DevOps & Cloud', 'Testing & Quality', 'Tools', 'Soft Skills', 'Others']),
         image: z.string().optional(),
         // campos como listas de strings
         challenges: z.array(z.string()).optional(),

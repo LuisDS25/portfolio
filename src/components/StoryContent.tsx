@@ -12,10 +12,10 @@ export default function StoryContent({ project } : StoryContentProps) {
             case "problem":
                 return (
                     <>
-                        <h3 className="text-white fs-5">El problema</h3>
+                        <h3 className="text-white fs-5">The context</h3>
                         <p className="fs-6 text-white text-opacity-75">{project.data.context}</p>
                         
-                        <h3 className="text-white fs-5">Principales retos</h3>
+                        <h3 className="text-white fs-5">Main challenges</h3>
 
                         <ul>
                             {project.data.challenges.map((c, i) => (
@@ -30,7 +30,7 @@ export default function StoryContent({ project } : StoryContentProps) {
             case "solution":
                 return (
                     <>
-                        <h3 className="text-white fs-5">Mi enfoque</h3>
+                        <h3 className="text-white fs-5">My Approach</h3>
                         <ul>
                             {project.data.decisions.map((d, i) => (
                                 <li key={i}>
@@ -39,7 +39,7 @@ export default function StoryContent({ project } : StoryContentProps) {
                             ))}
                         </ul>
 
-                        <h3 className="text-white fs-5">Lo que hice</h3>
+                        <h3 className="text-white fs-5">Actions Taken</h3>
                         <ul>
                             {project.data.actions.map((a, i) => (
                                 <li key={i}>
@@ -53,10 +53,10 @@ export default function StoryContent({ project } : StoryContentProps) {
             case "result":
                 return (
                     <>
-                        <h3 className="text-white fs-5">El resultado</h3>
+                        <h3 className="text-white fs-5">The Result</h3>
                         <p className="fs-6 text-white text-opacity-75">{project.data.result}</p>
 
-                        <h3 className="text-white fs-5">Que impacto tuvo</h3>
+                        <h3 className="text-white fs-5">The Impact</h3>
                         <ul>
                             {project.data.impact.map((i, idx) => (
                                 <li key={idx}>
@@ -65,7 +65,7 @@ export default function StoryContent({ project } : StoryContentProps) {
                             ))}
                         </ul>
 
-                        <h3 className="text-white fs-5">Lo que aprendí</h3>
+                        <h3 className="text-white fs-5">What I Learned</h3>
                         <ul>
                             {project.data.learnings.map((l, idx) => (
                                 <li key={idx}>
@@ -163,11 +163,11 @@ export default function StoryContent({ project } : StoryContentProps) {
                 <div className="story-nav d-flex gap-3">
                     {[
                         { key: "general", label: "General" },
-                        { key: "problem", label: "Problema" },
-                        { key: "solution", label: "Solución" },
-                        { key: "result", label: "Resultado" },
+                        { key: "problem", label: "Problem" },
+                        { key: "solution", label: "Solution" },
+                        { key: "result", label: "Result" },
                         ...(project.data.gallery?.length
-                            ? [{ key: "gallery", label: "Galería" }]
+                            ? [{ key: "gallery", label: "Gallery" }]
                             : []),
                     ].map((btn) => (
                         <button

@@ -1,19 +1,19 @@
 ---
 slug: "bootstrap"
 title: "Bootstrap"
-description: "Uso Bootstrap para construir interfaces responsivas de forma rápida, asegurando consistencia visual y adaptabilidad a distintos dispositivos."
-domain: 70
+description: "I use Bootstrap to quickly build responsive interfaces, ensuring visual consistency and adaptability to different devices."
+domain: 75
 class: "Frontend"
 
 
 challenges:
-  - "Adaptar layouts a diferentes pantallas"
+  - "Adapt layouts to different screens"
 actions:
-  - "Implementé layouts responsivos, personalizados al uso en diferentes tamaños de pantalla"
-  - "Utilicé componentes UI reutilizables"
+  - "I implemented responsive layouts, customized for use on different screen sizes"
+  - "I used and customized reusable UI components"
 impact:
-  - "Interfaces accesibles y consistentes"
+  - "Accessible and consistent interfaces"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
-  - "Plataforma digital de gestión académica y captación de alumnos"
+  - "Medical appointment management system with real-time synchronization"
+  - "Digital platform for academic management and student recruitment"
 ---

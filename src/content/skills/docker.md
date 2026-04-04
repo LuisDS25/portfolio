@@ -1,22 +1,22 @@
 ---
 slug: "docker"
 title: "Docker"
-description: "Uso Docker para contenerizar aplicaciones y estandarizar entornos de desarrollo y despliegue, asegurando consistencia entre entornos locales y producción."
-domain: 75
+description: "I use Docker to containerize applications and standardize development and deployment environments, ensuring consistency between local and production environments."
+domain: 71
 class: "DevOps & Cloud"
 image: "docker.jpg"
 
 challenges:
-  - "Estandarizar entornos con múltiples componentes (frontend, backend, base de datos)"
-  - "Integrar Docker con servicios cloud (Azure App Service)"
+  - "Standardize environments with multiple components (frontend, backend, database)"
+  - "Integrate Docker with cloud services (Azure App Service) and virtual private servers"
 actions:
-  - "Containericé aplicaciones Java + MySQL"
-  - "Implementé Docker Compose para orquestar servicios"
-  - "Subí imágenes a Docker Hub para despliegue"
+  - "I containerized Java and MySQL applications"
+  - "I implemented Docker Compose to orchestrate services"
+  - "I uploaded images to Docker Hub for deployment"
 impact:
-  - "Reducción de errores por diferencias de entorno"
-  - "Facilidad de despliegue y portabilidad"
+  - "Reduction of errors due to environmental differences"
+  - "Ease of deployment and portability"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
-  - "Plataforma digital de gestión académica y captación de alumnos"
+  - "Medical appointment management system with real-time synchronization"
+  - "Digital platform for academic management and student recruitment"
 ---

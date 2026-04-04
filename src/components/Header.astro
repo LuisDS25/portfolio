@@ -45,13 +45,13 @@ const currentPath = Astro.url.pathname;
                 href={`${base}`}
                 class={`nav-link p-2 mx-2 ${currentPath === base ? "active" : "text-white"}`}
             >
-                Inicio
+                Home
             </a>
             <a
                 href={`${base}skills`}
                 class={`nav-link p-2 mx-2 ${currentPath.startsWith(`${base}skills`) ? "active" : "text-white"}`}
             >
-                Habilidades
+                Skills
             </a>
             <a
                 href={`${base}projects`}
@@ -60,13 +60,13 @@ const currentPath = Astro.url.pathname;
                 : "text-white"  
                 }`}
             >
-                Proyectos
+                Projects
             </a>
             <a
                 href={`${base}about`}
                 class={`nav-link p-2 mx-2 ${currentPath.startsWith(`${base}about`) ? "active" : "text-white"}`}
             >
-                Sobre mí
+                About
             </a>
             </nav>
         </div>

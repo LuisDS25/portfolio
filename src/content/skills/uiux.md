@@ -1,20 +1,20 @@
 ---
 slug: "uiux"
 title: "UI/UX"
-description: "Diseño interfaces centradas en el usuario, optimizando flujos de interacción y experiencia en aplicaciones web."
-domain: 70
-class: "Otros"
+description: "I design user-centered interfaces, optimizing interaction flows and experience in web applications."
+domain: 72
+class: "Others"
 
 
 challenges:
-  - "Falta de identidad visual inicial"
-  - "Iteración de interfaces sin guía clara"
+  - "Lack of initial visual identity"
+  - "Iteration of interfaces without clear guidance"
 actions:
-  - "Diseñé flujos de usuario para agendamiento e inscripción"
-  - "Iteré prototipos y layouts"
+  - "I designed user flows for scheduling and registration"
+  - "I iterated prototypes and layouts"
 impact:
-  - "Mejora en claridad y usabilidad del sistema"
+  - "Improvement in system clarity and usability"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
-  - "Plataforma digital de gestión académica y captación de alumnos"
+  - "Medical appointment management system with real-time synchronization"
+  - "Digital platform for academic management and student recruitment"
 ---

@@ -1,19 +1,19 @@
 ---
 slug: "maven"
 title: "Maven"
-description: "Uso Maven para la gestión de dependencias y automatización del ciclo de vida de aplicaciones Java."
+description: "I use Maven for dependency management and Java application lifecycle automation."
 domain: 70
-class: "Herramientas"
+class: "Tools"
 
 
 challenges:
-  - "Manejo de dependencias en proyectos complejos"
+  - "Dependency management in complex projects"
 actions:
-  - "Configuré proyectos Spring Boot con Maven"
-  - "Gestioné dependencias y builds del sistema"
+  - "I configured Spring Boot projects with Maven"
+  - "I managed system dependencies and builds"
 impact:
-  - "Estandarización del proceso de construcción"
+  - "Standardization of the construction process"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
-  - "Plataforma digital de gestión académica y captación de alumnos"
+  - "Medical appointment management system with real-time synchronization"
+  - "Digital platform for academic management and student recruitment"
 ---

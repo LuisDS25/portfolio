@@ -1,20 +1,20 @@
 ---
 slug: "nginx"
 title: "NGINX"
-description: "Uso de NGINX como reverse proxy para enrutar tráfico, gestionar HTTPS y exponer servicios backend de forma segura."
+description: "Using NGINX as a reverse proxy to route traffic, manage HTTPS, and securely expose backend services."
 domain: 60
 class: "DevOps & Cloud"
 
 
 challenges:
-  - "Configurar proxy inverso correctamente"
-  - "Manejo de certificados HTTPS"
+  - "Configure a correct and functional reverse proxy"
+  - "Manage HTTPS certificates"
 actions:
-  - "Configuré NGINX para enrutar tráfico hacia backend y frontend"
-  - "Implementé HTTPS con certificados SSL"
+  - "I configured NGINX to route traffic to the backend and frontend"
+  - "I implemented HTTPS with SSL certificates"
 impact:
-  - "Mejora en seguridad y acceso al sistema"
-  - "Arquitectura lista para producción"
+  - "Improved system security and access"
+  - "Production-ready architecture"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
+  - "Medical appointment management system with real-time synchronization"
 ---

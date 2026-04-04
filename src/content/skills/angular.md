@@ -1,20 +1,20 @@
 ---
 slug: "angular"
 title: "Angular"
-description: "Desarrollo de aplicaciones frontend reactivas con Angular, enfocadas en formularios dinámicos, flujos complejos y consumo de APIs."
-domain: 65
+description: "Development of reactive frontend applications with Angular, focused on dynamic forms, complex flows and API consumption."
+domain: 60
 class: "Frontend"
 image: "angular.png"
 
 challenges:
-  - "Manejo de flujos complejos (agendamiento paso a paso)"
-  - "Sincronización de estado entre componentes"
+  - "Handling complex workflows (step-by-step scheduling)"
+  - "Synchronizing state between components"
 actions:
-  - "Implementé módulos para selección de paciente, horario y cita"
-  - "Desarrollé formularios reactivos con validaciones"
-  - "Integré consumo de APIs REST"
+  - "I implemented modules for patient selection, scheduling, and appointments"
+  - "I developed reactive forms with validations"
+  - "I integrated REST API consumption"
 impact:
-  - "Experiencia de usuario fluida en procesos de valor para negocios"
+  - "Seamless user experience in business value processes"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
+  - "Medical appointment management system with real-time synchronization"
 ---

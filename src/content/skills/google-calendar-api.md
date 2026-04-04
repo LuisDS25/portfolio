@@ -1,20 +1,20 @@
 ---
 slug: "google-calendar-api"
 title: "Google Calendar API"
-description: "Integración con Google Calendar para sincronizar eventos, gestionar disponibilidad y mantener consistencia entre sistemas."
-domain: 80
-class: "Integración & Arquitectura"
+description: "Integration with Google Calendar to synchronize events, manage availability, and maintain consistency across systems."
+domain: 75
+class: "Integration & Architecture"
 
 
 challenges:
-  - "Sincronización bidireccional"
-  - "Manejo de eventos externos (creación, edición, eliminación)"
+  - "Bidirectional synchronization"
+  - "External event handling (creation, editing, deletion)"
 actions:
-  - "Implementé creación, actualización y eliminación de eventos"
-  - "Sincronización con cambios realizados directamente en el calendario"
+  - "I implemented event creation, updating, and deletion"
+  - "synchronization with changes made directly to the calendar"
 impact:
-  - "Eliminación de discrepancias entre agenda digital y sistema"
-  - "Automatización completa del manejo de horarios"
+  - "Elimination of discrepancies between digital calendar and system"
+  - "Complete automation of scheduling management"
 projects:
-  - "Sistema inteligente de gestión de citas médicas con sincronización en tiempo real"
+  - "Medical appointment management system with real-time synchronization"
 ---
