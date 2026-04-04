@@ -91,11 +91,11 @@ export default function SkillItem({ skill }: SkillItemProps) {
 
                     <p>{skill.data.description}</p>
 
-                    {renderList('Desafíos enfrentados', skill.data.challenges)}
-                    {renderList('Acciones tomadas', skill.data.actions)}
-                    {renderList('Impacto conseguido', skill.data.impact)}
+                    {renderList('Challenges faced', skill.data.challenges)}
+                    {renderList('Actions Taken', skill.data.actions)}
+                    {renderList('Impact Achieved', skill.data.impact)}
                     {renderList(
-                        'Proyectos donde se aplicó esta habilidad',
+                        'Projects where this skill was applied',
                         skill.data.projects,
                         (skill.data.projects ?? []).map(p => `${base}projects/${toSlug(p)}`)
                     )}
